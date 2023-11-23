@@ -1,19 +1,14 @@
-const button = document.getElementById("Button")
-let buttonclick = false;
-
-button.addEventListener("click", function()
+function buttonClick() 
 {
-    if (!buttonclick)
-    {
-        alert("button clicked for the first!");
-        buttonclick = true;
-    }
-});
+    console.log("Button was clicked!");
+    let button = document.querySelector("button");
+    button.removeEventListener("click", buttonClick)
+}
+let button = document.querySelector("button");
+button.addEventListener("click", buttonClick)
 
-const link = document.getElementById("Link");
-
-link.addEventListener("click", function (event)
-{
+let link = document.querySelector("a");
+link.addEventListener("click", event => {
     event.preventDefault();
-    alert("No distractions! Im Coding!");
-})
+    alert("No distractions! I'm coding!");
+});
